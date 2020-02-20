@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+{% for item in item %}
+<div id="board1" class="row portfolio-container">
+
+  <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+
+    <div class="portfolio-wrap">
+      <img src='{{ item.image.url }}' class="img-fluid" alt="bbhb">
+      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+          <a href="{{ item.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample1" role="button" title="More Details"><i class="fa fa-list"></i></a>
+        </div>
+      </div>
+      <br>
+      <div class="collapse" id="collapseExample1">
+         <div class="card card-body">
+           <h4 align="center"><strong>Details</strong></h4><br>
+           <p><b>Clicked by</b>{{ item.taken_by }}<br>
+           <b>Description</b>: {{ item.description }}<br>
+           </p>
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+     <!-- <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+    <div class="portfolio-wrap">
+      <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
+      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+          <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample2" role="button" title="More Details"><i class="fa fa-list"></i></a>
+        </div>
+      </div>
+      <br>
+      <div class="collapse" id="collapseExample2">
+         <div class="card card-body">
+           <h4 align="center"><strong>Details</strong></h4><br>
+           <p><b>Clicked by</b>: Namee<br>
+           <b>Description</b>: abcdefg hijklmno pqrst uvwxyz<br>
+           </p>
+
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+    <div class="portfolio-wrap">
+      <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
+      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+          <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample3" role="button" title="More Details"><i class="fa fa-list"></i></a>
+        </div>
+      </div>
+      <br>
+      <div class="collapse" id="collapseExample3">
+         <div class="card card-body">
+           <h4 align="center"><strong>Details</strong></h4><br>
+           <p><b>Clicked by</b>: Namee<br>
+           <b>Description</b>: abcdefg hijklmno pqrst uvwxyz<br>
+           </p>
+
+        </div>
+      </div>
+    </div> -->
+
+</div>
+<br>
+<div align="center">
+ <div class="upload-btn-wrapper">
+   <button class="btn btn-primary">Scan QR</button>
+ <input type="file" name="myfile" capture="camera"/>
+ </div>
+</div>
+
+
+
+</div>
+</section>
+{% endblock %}
