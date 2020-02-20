@@ -29,25 +29,30 @@
     <div class="container">
 
       <div class="logo float-left">
-        <a href='{% url "index" %}' class="scrollto"><h3><b>P</b>IXEL <b>L</b>ANE <b>2020</b></h3></a>
+        <a href='{% url "display:index" %}' class="scrollto"><h3><b>P</b>IXEL <b>L</b>ANE <b>2020</b></h3></a>
       </div>
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href='{% url "index" %}'>Home</a></li>
+          <li class="active"><a href='{% url "display:index" %}'>Home</a></li>
           <li class="drop-down"><a href="">Boards</a>
             <ul>
-              <li><a href="board1.html">Board 1</a></li>
-              <li><a href="board2.html">Board 2</a></li>
-              <li><a href="board3.html">Board 3</a></li>
-              <li><a href="board4.html">Board 4</a></li>
-              <li><a href="board5.html">Board 5</a></li>
-              <li><a href="board6.html">Board 6</a></li>
-              <li><a href="board7.html">Board 7</a></li>
-              <li><a href="board8.html">Board 8</a></li>
-              <li><a href="board9.html">Board 9</a></li>
-              <li><a href="board10.html">Board 10</a></li>
-              <li><a href="board11.html">Board 11</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Portraiture</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Long Exposure</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Lifestyle</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Wildlife</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Street</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Bird</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Landscape</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Architecture</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Abstract</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Vogue</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Night Life</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Portraiture</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Long Exposure</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Lifestyle</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Wildlife</a></li>
+              <li><a href='{% url "display:boards" genres="wildlife" %}'>Street</a></li>
             </ul>
           </li>
 
@@ -89,6 +94,7 @@
 <script src='{% static "lib/mobile-nav/mobile-nav.js" %}'></script>
 <script src='{% static "lib/wow/wow.min.js" %}'></script>
 <script src='{% static "js/main.js" %}'></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/browser-image-compression@latest/dist/browser-image-compression.js"></script>
 
 </body>
 </html>

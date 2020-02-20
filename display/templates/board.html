@@ -1,81 +1,409 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% block title %} {% if genre %} {{ genre }} {% endif %} {% endblock %}
 {% block content %}
-{% for item in item %}
-<div id="board1" class="row portfolio-container">
+ <section id="portfolio" class="clearfix">
+    <div class="container">
 
-  <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+      <header class="section-header">
+	<br><br><br><br>
+        <h3 class="section-title">{% if genre %} {{ genre|title }} {% endif %}</h3>
+        <br><br>
+      </header>
+<!--
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li class="filter-active"><a style="color:#ffffff;" href="javascript:">Board 1</a></li>
+              <li><a style="color:#ffffff;" href="javascript:Board2()">Board 2</li>
+              <li><a style="color:#ffffff;" href="javascript:Board3()">Board 3</li>
+              <li><a style="color:#ffffff;" href="javascript:Board4()">Board 4</li>
+			  <li><a style="color:#ffffff;" href="javascript:Board5()">Board 5</li>
+              <li><a style="color:#ffffff;" href="javascript:Board6()">Board 6</li>
+              <li><a style="color:#ffffff;" href="javascript:Board7()">Board 7</li>
+			  <li><a style="color:#ffffff;" href="javascript:Board8()">Board 8</li>
+            </ul>
+          </div>
+        </div> -->
 
-    <div class="portfolio-wrap">
-      <img src='{{ item.image.url }}' class="img-fluid" alt="bbhb">
-      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
-          <a href="{{ item.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
-          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample1" role="button" title="More Details"><i class="fa fa-list"></i></a>
-        </div>
+        <div id="board1" class="row portfolio-container">
+          {% if item1 %}
+          <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <img src="{{ item1.image.url }}" class="img-fluid" alt="">
+              <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                  <a href="{{ item1.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample1" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                </div>
+              </div>
+              <br>
+              <div class="collapse" id="collapseExample1">
+                 <div class="card card-body">
+                   <h4 align="center"><strong>Details</strong></h4><br>
+                   <p><b>Clicked by</b>: {{item1.photographer }}<br>
+                   <b>Description</b>: {{item1.description}}<br>
+                   <b>EXIF</b>: {{item.brand }}<br>
+                   {{item1.model }}<br>
+                   {{item1.shuttersped }}<br>
+                   {{item1.focallength }}<br>
+                   {{item1.aperture }}<br>
+                   {{item1.iso }}<br>
+                   {{item1.lens }}<br>
+                   </p>
+
+                </div>
+              </div>
+            </div>
+
+            {% endif %}
+            {% if item2 %}
+            <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+              <div class="portfolio-wrap">
+                <img src="{{ item2.image.url }}" class="img-fluid" alt="">
+                <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                    <a href="{{ item2.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                    <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample2" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                  </div>
+                </div>
+                <br>
+                <div class="collapse" id="collapseExample2">
+                   <div class="card card-body">
+                     <h4 align="center"><strong>Details</strong></h4><br>
+                     <p><b>Clicked by</b>: {{item2.photographer }}<br>
+                     <b>Description</b>: {{item2.description}}<br>
+                     <b>EXIF</b>: {{item2.brand }}<br>
+                     {{item2.model }}<br>
+                     {{item2.shutterspeed }}<br>
+                     {{item2.focallength }}<br>
+                     {{item2.aperture }}<br>
+                     {{item2.iso }}<br>
+                     {{item2.lens }}<br>
+                     </p>
+                  </div>
+                </div>
+              </div>
+
+              {% endif %}
+              {% if item3 %}
+              <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+                <div class="portfolio-wrap">
+                  <img src="{{ item3.image.url }}" class="img-fluid" alt="">
+                  <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                      <a href="{{ item3.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                      <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample3" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="collapse" id="collapseExample3">
+                     <div class="card card-body">
+                       <h4 align="center"><strong>Details</strong></h4><br>
+                       <p><b>Clicked by</b>: {{item3.photographer }}<br>
+                       <b>Description</b>: {{item3.description}}<br>
+                       <b>EXIF</b>: {{item3.brand }}<br>
+                       {{item3.model }}<br>
+                       {{item3.shutterspeed }}<br>
+                       {{item3.focallength }}<br>
+                       {{item3.aperture }}<br>
+                       {{item3.iso }}<br>
+                       {{item3.lens }}<br>
+                       </p>
+
+                    </div>
+                  </div>
+                </div>
+
+                {% endif %}
+                {% if item4 %}
+                <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+                  <div class="portfolio-wrap">
+                    <img src="{{ item4.image.url }}" class="img-fluid" alt="">
+                    <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                        <a href="{{ item4.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                        <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample4" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="collapse" id="collapseExample4">
+                       <div class="card card-body">
+                         <h4 align="center"><strong>Details</strong></h4><br>
+                         <p><b>Clicked by</b>: {{item4.photographer }}<br>
+                         <b>Description</b>: {{item4.description}}<br>
+                         <b>EXIF</b>: {{item4.brand }}<br>
+                         {{item4.model }}<br>
+                         {{item4.shutterspeed }}<br>
+                         {{item4.focallength }}<br>
+                         {{item4.aperture }}<br>
+                         {{item4.iso }}<br>
+                         {{item4.lens }}<br>
+                         </p>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  {% endif %}
+                  {% if item5 %}
+                  <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+                    <div class="portfolio-wrap">
+                      <img src="{{ item5.image.url }}" class="img-fluid" alt="">
+                      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                          <a href="{{ item5.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample5" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="collapse" id="collapseExample5">
+                         <div class="card card-body">
+                           <h4 align="center"><strong>Details</strong></h4><br>
+                           <p><b>Clicked by</b>: {{item5.photographer }}<br>
+                           <b>Description</b>: {{item5.description}}<br>
+                           <b>EXIF</b>: {{item5.brand }}<br>
+                           {{item5.model }}<br>
+                           {{item5.shutterspeed }}<br>
+                           {{item5.focallength }}<br>
+                           {{item5.aperture }}<br>
+                           {{item5.iso }}<br>
+                           {{item5.lens }}<br>
+                           </p>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  {% endif %}
+                  {% if item10 %}
+                  <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+                    <div class="portfolio-wrap">
+                      <img src="{{ item10.image.url }}" class="img-fluid" alt="">
+                      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                          <a href="{{ item10.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample10" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="collapse" id="collapseExample10">
+                         <div class="card card-body">
+                           <h4 align="center"><strong>Details</strong></h4><br>
+                           <p><b>Clicked by</b>: {{item10.photographer }}<br>
+                           <b>Description</b>: {{item10.description}}<br>
+                           <b>EXIF</b>: {{item10.brand }}<br>
+                           {{item10.model }}<br>
+                           {{item10.shutterspeed }}<br>
+                           {{item10.focallength }}<br>
+                           {{item10.aperture }}<br>
+                           {{item10.iso }}<br>
+                           {{item10.lens }}<br>
+                           </p>
+
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if item6 %}
+                  <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+                    <div class="portfolio-wrap">
+                      <img src="{{ item6.image.url }}" class="img-fluid" alt="">
+                      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                          <a href="{{ item6.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample6" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="collapse" id="collapseExample6">
+                         <div class="card card-body">
+                           <h4 align="center"><strong>Details</strong></h4><br>
+                           <p><b>Clicked by</b>: {{item6.photographer }}<br>
+                           <b>Description</b>: {{item6.description}}<br>
+                           <b>EXIF</b>: {{item6.brand }}<br>
+                           {{item6.model }}<br>
+                           {{item6.shutterspeed }}<br>
+                           {{item6.focallength }}<br>
+                           {{item6.aperture }}<br>
+                           {{item6.iso }}<br>
+                           {{item6.lens }}<br>
+                           </p>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  {% endif %}
+                  {% if item7 %}
+                  <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+                    <div class="portfolio-wrap">
+                      <img src="{{ item7.image.url }}" class="img-fluid" alt="">
+                      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                          <a href="{{ item7.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample7" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="collapse" id="collapseExample7">
+                         <div class="card card-body">
+                           <h4 align="center"><strong>Details</strong></h4><br>
+                           <p><b>Clicked by</b>: {{item7.photographer }}<br>
+                           <b>Description</b>: {{item7.description}}<br>
+                           <b>EXIF</b>: {{item7.brand }}<br>
+                           {{item7.model }}<br>
+                           {{item7.shutterspeed }}<br>
+                           {{item7.focallength }}<br>
+                           {{item7.aperture }}<br>
+                           {{item7.iso }}<br>
+                           {{item7.lens }}<br>
+                           </p>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  {% endif %}
+                  {% if item8 %}
+                  <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+                    <div class="portfolio-wrap">
+                      <img src="{{ item8.image.url }}" class="img-fluid" alt="">
+                      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                          <a href="{{ item8.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample8" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="collapse" id="collapseExample8">
+                         <div class="card card-body">
+                           <h4 align="center"><strong>Details</strong></h4><br>
+                           <p><b>Clicked by</b>: {{item8.photographer }}<br>
+                           <b>Description</b>: {{item8.description}}<br>
+                           <b>EXIF</b>: {{item8.brand }}<br>
+                           {{item8.model }}<br>
+                           {{item8.shutterspeed }}<br>
+                           {{item8.focallength }}<br>
+                           {{item8.aperture }}<br>
+                           {{item8.iso }}<br>
+                           {{item8.lens }}<br>
+                           </p>
+
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if item9 %}
+                  <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+                    <div class="portfolio-wrap">
+                      <img src="{{ item9.image.url }}" class="img-fluid" alt="">
+                      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                          <a href="{{ item9.image.url }}" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample9" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="collapse" id="collapseExample9">
+                         <div class="card card-body">
+                           <h4 align="center"><strong>Details</strong></h4><br>
+                           <p><b>Clicked by</b>: {{item9.photographer }}<br>
+                           <b>Description</b>: {{item9.description}}<br>
+                           <b>EXIF</b>: {{item9.brand }}<br>
+                           {{item9.model }}<br>
+                           {{item9.shutterspeed }}<br>
+                           {{item9.focallength }}<br>
+                           {{item9.aperture }}<br>
+                           {{item9.iso }}<br>
+                           {{item9.lens }}<br>
+                           </p>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    {% endif %}
+
+            </div>
+             <!-- <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                  <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details" onclick="" data-toggle="collapse" href="#collapseExample2" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                </div>
+              </div>
+              <br>
+              <div class="collapse" id="collapseExample2">
+                 <div class="card card-body">
+                   <h4 align="center"><strong>Details</strong></h4><br>
+                   <p><b>Clicked by</b>: Namee<br>
+                   <b>Description</b>: abcdefg hijklmno pqrst uvwxyz<br>
+                   </p>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
+                  <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a class="link-details" onclick="" data-toggle="collapse" href="#collapseExample3" role="button" title="More Details"><i class="fa fa-list"></i></a>
+                </div>
+              </div>
+              <br>
+              <div class="collapse" id="collapseExample3">
+                 <div class="card card-body">
+                   <h4 align="center"><strong>Details</strong></h4><br>
+                   <p><b>Clicked by</b>: Namee<br>
+                   <b>Description</b>: abcdefg hijklmno pqrst uvwxyz<br>
+                   </p>
+
+                </div>
+              </div>
+            </div> -->
+
+
+		    <br>
+        <form enctype='multipart/form-data' class="" action="" id='form' method="POST" >{% csrf_token %}
+          <div align="center">
+            <div class="upload-btn-wrapper">
+              <button class="btn btn-primary">Scan QR</button>
+              <input type="file" name="myfile" capture="camera" onchange='handleImageUpload(event)'/>
+            </div>
+          </div>
+        </form>
       </div>
-      <br>
-      <div class="collapse" id="collapseExample1">
-         <div class="card card-body">
-           <h4 align="center"><strong>Details</strong></h4><br>
-           <p><b>Clicked by</b>{{ item.taken_by }}<br>
-           <b>Description</b>: {{ item.description }}<br>
-           </p>
+    </section>
+    <script type="text/javascript">
 
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-     <!-- <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
-    <div class="portfolio-wrap">
-      <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
-      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
-          <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
-          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample2" role="button" title="More Details"><i class="fa fa-list"></i></a>
-        </div>
-      </div>
-      <br>
-      <div class="collapse" id="collapseExample2">
-         <div class="card card-body">
-           <h4 align="center"><strong>Details</strong></h4><br>
-           <p><b>Clicked by</b>: Namee<br>
-           <b>Description</b>: abcdefg hijklmno pqrst uvwxyz<br>
-           </p>
+      function ChangeFunction
 
-        </div>
-      </div>
-    </div> -->
+    </script>
 
-    <!-- <div class="col-md-4 portfolio-item" data-wow-delay="0.1s">
-    <div class="portfolio-wrap">
-      <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
-      <div class="portfolio-info" align="center" style='display:flex;flex-direction: row;padding: 10px;'>
-          <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" title="Preview"><i class="ion ion-eye"></i></a>
-          <a class="link-details" onclick="board1()" data-toggle="collapse" href="#collapseExample3" role="button" title="More Details"><i class="fa fa-list"></i></a>
-        </div>
-      </div>
-      <br>
-      <div class="collapse" id="collapseExample3">
-         <div class="card card-body">
-           <h4 align="center"><strong>Details</strong></h4><br>
-           <p><b>Clicked by</b>: Namee<br>
-           <b>Description</b>: abcdefg hijklmno pqrst uvwxyz<br>
-           </p>
+    <script type="text/javascript">
+      function formAutoSubmit(){
+        var frm = document.getElementById('form');
+        frm.submit();
+      }
+    </script>
+    <script type="text/javascript">
+       function handleImageUpload(event) {
 
-        </div>
-      </div>
-    </div> -->
+        var imageFile = event.target.files[0];
+        console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
+        console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
 
-</div>
-<br>
-<div align="center">
- <div class="upload-btn-wrapper">
-   <button class="btn btn-primary">Scan QR</button>
- <input type="file" name="myfile" capture="camera"/>
- </div>
-</div>
+        var options = {
+          maxSizeMB: 0.2,
+          maxWidthOrHeight:1000,
+          useWebWorker: true
+        }
+        imageCompression(imageFile, options)
+          .then(function (compressedFile) {
+            console.log('compressedFile instanceof Blob', compressedFile instanceof Blob);   // true
+            console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`);   // smaller than maxSizeMB
 
 
-
-</div>
-</section>
+            formAutoSubmit();
+          })
+          .catch(function (error) {
+            console.log(error.message);
+          });
+      }
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/browser-image-compression@latest/dist/browser-image-compression.js"></script>
 {% endblock %}

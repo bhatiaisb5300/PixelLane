@@ -11,15 +11,15 @@ from django.db import models
 
 
 
-class wildlife(models.Model):
+class images(models.Model):
 
     photographer = models.CharField(max_length=20)
-    shot_on = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='wildlife/images')
+    # shot_on = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='images/images')
     description = models.CharField(max_length=150)
-    views = models.IntegerField(default=0)
-    batch = models.CharField(max_length=4)
-    insta = models.URLField()
+    # views = models.IntegerField(default=0)
+    # batch = models.CharField(max_length=4)
+    # insta = models.URLField()
 
 
     # exif = models.OneToOneField(exif,on_delete=models.CASCADE)
@@ -41,16 +41,16 @@ class wildlife(models.Model):
 class board(models.Model):
 
     genre = models.CharField(max_length=20)
-    detail1 = models.ForeignKey(wildlife,on_delete=models.CASCADE,related_name='+')
-    detail2 = models.ForeignKey(wildlife,on_delete=models.CASCADE,related_name='+')
-    detail3 = models.ForeignKey(wildlife,on_delete=models.CASCADE,related_name='+')
-    detail4 = models.ForeignKey(wildlife,on_delete=models.CASCADE,related_name='+')
-    detail5 = models.ForeignKey(wildlife,on_delete=models.CASCADE,related_name='+')
-    detail6 = models.ForeignKey(wildlife,on_delete=models.CASCADE,related_name='+')
-    detail7 = models.ForeignKey(wildlife,on_delete=models.CASCADE,related_name='+')
-    detail8 = models.ForeignKey(wildlife,on_delete=models.CASCADE,related_name='+')
-    detail9 = models.ForeignKey(wildlife,on_delete=models.CASCADE,related_name='+')
-    detail10 = models.ForeignKey(wildlife,on_delete=models.CASCADE,blank=True,null=True)
+    detail1  = models.ForeignKey(images,on_delete=models.CASCADE,related_name='+')
+    detail2  = models.ForeignKey(images,on_delete=models.CASCADE,related_name='+',blank=True,null=True)
+    detail3  = models.ForeignKey(images,on_delete=models.CASCADE,related_name='+',blank=True,null=True)
+    detail4  = models.ForeignKey(images,on_delete=models.CASCADE,related_name='+',blank=True,null=True)
+    detail5  = models.ForeignKey(images,on_delete=models.CASCADE,related_name='+',blank=True,null=True)
+    detail6  = models.ForeignKey(images,on_delete=models.CASCADE,related_name='+',blank=True,null=True)
+    detail7  = models.ForeignKey(images,on_delete=models.CASCADE,related_name='+',blank=True,null=True)
+    detail8  = models.ForeignKey(images,on_delete=models.CASCADE,related_name='+',blank=True,null=True)
+    detail9  = models.ForeignKey(images,on_delete=models.CASCADE,related_name='+',blank=True,null=True)
+    detail10 = models.ForeignKey(images,on_delete=models.CASCADE,related_name='+',blank=True,null=True)
     def __str__(self):
         return self.genre
 
@@ -111,7 +111,7 @@ class board(models.Model):
 #
 #     photographer = models.CharField(max_length=20)
 #     shot_on = models.CharField(max_length=50)
-#     image = models.ImageField(upload_to='wildlife/images')
+#     image = models.ImageField(upload_to='images/images')
 #     description = models.CharField(max_length=150)
 #     views = models.IntegerField(default=0)
 #     batch = models.CharField(max_length=4)
