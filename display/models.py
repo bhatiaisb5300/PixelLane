@@ -16,7 +16,7 @@ class images(models.Model):
     photographer = models.CharField(max_length=20)
     # shot_on = models.CharField(max_length=50)
     image = models.ImageField(upload_to='images/images')
-    description = models.CharField(max_length=150)
+    description = models.CharField(max_length=1000)
     # views = models.IntegerField(default=0)
     # batch = models.CharField(max_length=4)
     # insta = models.URLField()
