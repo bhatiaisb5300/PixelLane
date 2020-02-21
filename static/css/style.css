@@ -193,14 +193,16 @@ h6 {
 #intro .intro-info h2 {
     color: #fff;
     margin-bottom: 40px;
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 40px;
+
 }
 
 #intro .intro-info h2 span {
     color: #74b5fc;
-    text-decoration: none;
+    text-decoration: inherit;
+    font-weight: 520;
 }
+
 
 #intro .intro-info .btn-get-started,
 #intro .intro-info .btn-services {
