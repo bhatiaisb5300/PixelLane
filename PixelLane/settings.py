@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jreo182pd9^v$adzu2lu+opk-i@mum0qq#-j*^9b2=nstdp&$w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['45.79.120.188','clickclub.nitrr.ac.in','www.clickclub.nitrr.ac.in']
 
