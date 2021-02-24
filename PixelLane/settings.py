@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jreo182pd9^v$adzu2lu+opk-i@mum0qq#-j*^9b2=nstdp&$w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['206.189.132.211','clickclub.nitrr.ac.in','www.clickclub.nitrr.ac.in']
+DEBUG = True
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['206.189.132.211','clickclub.nitrr.ac.in','www.clickclub.nitrr.ac.in']
 
 
 # Application definition
@@ -134,10 +134,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static/'),
-# ]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/'),
+]
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
