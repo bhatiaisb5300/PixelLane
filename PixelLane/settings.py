@@ -24,8 +24,8 @@ SECRET_KEY = 'jreo182pd9^v$adzu2lu+opk-i@mum0qq#-j*^9b2=nstdp&$w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['206.189.132.211','clickclub.nitrr.ac.in','www.clickclub.nitrr.ac.in']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['45.79.120.188','clickclub.nitrr.ac.in','www.clickclub.nitrr.ac.in']
 
 
 # Application definition
@@ -75,26 +75,26 @@ WSGI_APPLICATION = 'PixelLane.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-if DEBUG:
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            }
-        }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'clickdb',
-            'USER': 'click',
-            'PASSWORD' :'django',
-            'HOST' : 'localhost',
-            'PORT' : ''
-
-        }
-
+# if DEBUG:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'clickdb',
+#             'USER': 'click',
+#             'PASSWORD' :'django',
+#             'HOST' : 'localhost',
+#             'PORT' : ''
+
+#         }
+
+#     }
 
 
 # Password validation
@@ -121,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -134,10 +134,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/'),
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static/'),
+# ]
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
