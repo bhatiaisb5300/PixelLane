@@ -11,7 +11,7 @@ django-import-export==1.2.0
 django-material-widgets==1.0.0b3
 django-pwa==1.0.6
 django-rest-auth==0.9.5
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 enum34==1.1.6
 et-xmlfile==1.0.1
 ExifRead==2.1.2
